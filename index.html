@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      overflow: hidden;
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48'><text y='50%'>💖</text></svg>") 16 0, auto;
+      background-image: url('rose.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .title {
+      font-family: 'Dancing Script', cursive;
+      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;
+      }
+
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6;
+      }
+    }
+
+    .subtitle {
+      font-family: 'Dancing Script', cursive;
+      text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+    }
+
+    .vignette {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .pastel-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 192, 203, 0.15);
+      pointer-events: none; /* Cho phép click xuyên qua lớp phủ */
+      backdrop-filter: blur(4px);
+      z-index: 1;
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    .crystal-rose {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 450px;
+      max-width: 90vw;
+      z-index: 0;
+      filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.6));
+      animation: pulse 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.6)) scale(1); }
+      to { filter: drop-shadow(0 0 30px rgba(255, 105, 180, 0.8)) scale(1.03); }
+    }
+
+    .falling-flower {
+      position: absolute;
+      top: -50px;
+      font-size: 2rem;
+      animation: fall linear forwards;
+      pointer-events: auto; /* Cho phép nhấn vào bông hoa */
+      user-select: none;
+      cursor: pointer;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+      z-index: 100;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateX(20px) translateY(50vh) rotate(180deg);
+      }
+
+      100% {
+        transform: translateX(-20px) translateY(110vh) rotate(360deg);
+      }
+    }
+
+    .wish-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wish-modal-content {
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      padding: 2.5rem;
+      border-radius: 20px;
+      text-align: center;
+      color: #8b0000;
+      font-size: 1.5rem;
+      max-width: 90%;
+      width: 500px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      border: 2px solid white;
+      position: relative;
+      animation: popUp 0.4s ease-out;
+    }
+
+    @keyframes popUp {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .wish-modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      cursor: pointer;
+      color: #ee9ca7;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="vignette"></div>
+  <div class="pastel-overlay"></div>
+
+  <div class="min-h-screen flex flex-col items-center justify-center relative p-4">
+    <div class="text-center z-10 mb-[19rem] md:mb-[-9rem] fade-in-up">
+      <h1 class="title text-5xl md:text-7xl text-pink-600 mb-8">Chúc Mừng 20/10</h1>
+      <p class="subtitle text-3xl text-pink-700">Gửi đến những người phụ nữ tuyệt vời!</p>
+    </div>
+
+    <!-- Thêm lại hình ảnh bông hoa 2D -->
+    <img src="crystal-rose.png" alt="Crystal Rose" class="crystal-rose" onerror="this.style.display='none'">
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+const wishes = [
+  // 🌸 Lời chúc ý nghĩa - nhẹ nhàng
+  "💐 Chúc bạn một ngày 20/10 thật vui vẻ, hạnh phúc và nhận được nhiều quà nhé! 🎁",
+  "🌹 Chúc bạn luôn xinh đẹp, rạng rỡ và thành công trong cuộc sống. ✨",
+  "💖 Mong mọi điều tốt đẹp nhất sẽ đến với bạn, không chỉ trong hôm nay mà trong cả cuộc đời.",
+  "🌸 Cảm ơn bạn vì đã luôn là một người phụ nữ tuyệt vời. Chúc mừng ngày của bạn! 💕",
+  "😊 Hãy luôn mỉm cười nhé, vì nụ cười của bạn làm bừng sáng cả thế giới này. 🌞",
+  "🌷 Chúc bạn có một ngày 20/10 ngập tràn hoa và những lời yêu thương. 💌",
+  "🌺 Chúc bạn luôn mạnh khỏe, bình an và được mọi người yêu quý. 🌿",
+  "💎 Bạn là một người phụ nữ đặc biệt. Hãy luôn tự tin và tỏa sáng nhé! ✨",
+  "🌻 Ngày 20/10 là dịp để nói rằng: bạn xứng đáng được yêu thương mỗi ngày, không chỉ hôm nay. 💕",
+  "💐 Chúc bạn mãi là bông hoa tươi đẹp nhất trong khu vườn cuộc sống. 🌼",
+
+  // 😂 Lời chúc hài hước - vui tươi
+  "🤣 Chúc bạn ngày 20/10 vui như trúng số, đẹp như idol Hàn và ăn bao nhiêu cũng không mập nhé! 🍰",
+  "😜 Hôm nay bạn được phép lười một chút, ăn nhiều một chút, và nhận quà thật nhiều nha! 🎁",
+  "🌹 Chúc bạn xinh như hoa hậu, nói câu nào cũng ngọt như trà sữa, mà không cần pha đường! 🧋",
+  "😂 Chúc bạn luôn tươi trẻ như gái 18, mặc dù thẻ căn cước không cho phép điều đó! 📅",
+  "💄 Chúc bạn mỗi sáng soi gương thấy mình đẹp hơn hôm qua — và gương cũng đồng ý điều đó! 😍",
+  "🍫 Ngày 20/10, nếu có ai tặng chocolate thì ăn ngay nhé — biết đâu họ đang thả thính đó! 😉",
+  "👜 Chúc bạn luôn có ví dày, da căng, lương cao và deadline… thật xa! 💸",
+  "💅 Hôm nay đừng làm gì hết — vì việc quan trọng nhất là làm *nữ chính* trong ngày của mình! 👑",
+  "🎈 Chúc bạn ngày 20/10 nhận được nhiều quà đến mức phải mượn balo của đồng nghiệp để đựng thêm! 🎁",
+  "😆 Chúc bạn luôn yêu đời, trẻ mãi không già, và mãi là *nỗi lo lắng của các cô gái khác*! 💃"
+];
+
+
+      const flowers = ['🌸', '🌺', '🌹', '🌷', '💐', '🌼'];
+
+      const flowerContainer = document.createElement('div');
+      flowerContainer.id = 'flower-container';
+      flowerContainer.style.position = 'fixed';
+      flowerContainer.style.top = 0;
+      flowerContainer.style.left = 0;
+      flowerContainer.style.width = '100%';
+      flowerContainer.style.height = '100%';
+      flowerContainer.style.pointerEvents = 'none';
+      flowerContainer.style.zIndex = 50;
+      document.body.appendChild(flowerContainer);
+
+      function createFallingFlower() {
+        const flower = document.createElement('div');
+        flower.classList.add('falling-flower');
+        flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+        flower.style.left = `${Math.random() * 100}vw`;
+        const duration = Math.random() * 5 + 8;
+        flower.style.animationDuration = `${duration}s`;
+        flower.style.animationDelay = `${Math.random() * 3}s`;
+
+        flowerContainer.appendChild(flower);
+
+        flower.addEventListener('click', () => {
+          flower.style.transform += ' scale(1.5)';
+          flower.style.opacity = '0.5';
+          showWish(wishes[Math.floor(Math.random() * wishes.length)]);
+        });
+
+        flower.addEventListener('animationend', () => flower.remove());
+        setTimeout(() => flower.remove(), 15000);
+      }
+
+      function showWish(wishText) {
+        const existingModal = document.querySelector('.wish-modal-backdrop');
+        if (existingModal) existingModal.remove();
+
+        const modalBackdrop = document.createElement('div');
+        modalBackdrop.className = 'wish-modal-backdrop';
+
+        const modalContent = document.createElement('div');
+        modalContent.className = 'wish-modal-content';
+        modalContent.style.fontFamily = "'Dancing Script', cursive";
+        modalContent.innerHTML = `<p>${wishText}</p><div class="wish-modal-close">X</div>`;
+
+        modalBackdrop.appendChild(modalContent);
+        document.body.appendChild(modalBackdrop);
+
+        const closeModal = () => modalBackdrop.remove();
+        modalBackdrop.querySelector('.wish-modal-close').addEventListener('click', closeModal);
+        modalBackdrop.addEventListener('click', (e) => {
+          if (e.target === modalBackdrop) closeModal();
+        });
+      }
+
+      // Nhịp rơi nhẹ hơn
+      setInterval(createFallingFlower, 1000);
+
+    });
+  </script>
+</body>
+
+</html>
