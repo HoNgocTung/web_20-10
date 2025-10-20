@@ -214,8 +214,24 @@ const wishes = [
   "👜 Chúc bạn luôn có ví dày, da căng, lương cao và deadline… thật xa! 💸",
   "💅 Hôm nay đừng làm gì hết — vì việc quan trọng nhất là làm *nữ chính* trong ngày của mình! 👑",
   "🎈 Chúc bạn ngày 20/10 nhận được nhiều quà đến mức phải mượn balo của đồng nghiệp để đựng thêm! 🎁",
-  "😆 Chúc bạn luôn yêu đời, trẻ mãi không già, và mãi là *nỗi lo lắng của các cô gái khác*! 💃"
-];
+  "😆 Chúc bạn luôn yêu đời, trẻ mãi không già, và mãi là *nỗi lo lắng của các cô gái khác*! 💃",
+  "🎁Chúc mừng bạn đã tìm thấy phần quà bí mật này! Cap màn hình và gửi cho Cục Zàng để nhận quà bất ngờ nhé!🎉"
+      ];
+
+      // Tách lời chúc bí mật ra
+      const secretWish = wishes.pop();
+      const commonWishes = wishes;
+
+      // Hàm chọn lời chúc với tỷ lệ 1% cho lời chúc bí mật
+      function getWish() {
+        const chance = Math.random(); // Tạo một số ngẫu nhiên từ 0 đến 1
+        if (chance < 0.01) { // 1% cơ hội
+          return secretWish;
+        } else { // 99% cơ hội còn lại
+          const randomIndex = Math.floor(Math.random() * commonWishes.length);
+          return commonWishes[randomIndex];
+        }
+      }
 
 
       const flowers = ['🌸', '🌺', '🌹', '🌷', '💐', '🌼'];
@@ -245,7 +261,7 @@ const wishes = [
         flower.addEventListener('click', () => {
           flower.style.transform += ' scale(1.5)';
           flower.style.opacity = '0.5';
-          showWish(wishes[Math.floor(Math.random() * wishes.length)]);
+          showWish(getWish());
         });
 
         flower.addEventListener('animationend', () => flower.remove());
