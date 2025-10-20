@@ -226,7 +226,7 @@ const wishes = [
       // Hàm chọn lời chúc với tỷ lệ 1% cho lời chúc bí mật
       function getWish() {
         const chance = Math.random(); // Tạo một số ngẫu nhiên từ 0 đến 1
-        if (chance < 0.09) { // 1% cơ hội
+        if (chance < 0.001) { // 1% cơ hội
           return secretWish;
         } else { // 99% cơ hội còn lại
           const randomIndex = Math.floor(Math.random() * commonWishes.length);
@@ -299,6 +299,7 @@ const wishes = [
 </body>
 
 </html>
+
 
 
 
